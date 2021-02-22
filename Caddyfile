@@ -1,3 +1,9 @@
+(cors) {
+        header Access-Control-Allow-Origin "{args.0}"
+}
+
 api.zws.im {
+        import cors *
+
         reverse_proxy 127.0.0.1:3000
 }

@@ -8,7 +8,7 @@
 	}
 }
 
-api.zws.im {
+api.zws.im:80 {
 	import cloudflare_dns
 
 	@preflight {
@@ -28,13 +28,13 @@ api.zws.im {
 	reverse_proxy 127.0.0.1:3000
 }
 
-status.zws.im {
+status.zws.im:80 {
 	import cloudflare_dns
 
 	reverse_proxy 127.0.0.1:3001
 }
 
-metabase.zws.im {
+metabase.zws.im:80 {
 	import cloudflare_dns
 
 	reverse_proxy 127.0.0.1:3002

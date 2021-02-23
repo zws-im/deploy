@@ -31,6 +31,8 @@ services:
       - ./monitoror.json:/bin/config.json:ro
     ports:
       - '3001:8080'
+    links:
+      - web
   watchtower:
     image: containrrr/watchtower
     restart: unless-stopped

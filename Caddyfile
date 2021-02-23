@@ -1,3 +1,7 @@
+{
+	email jonah@jonah.pw
+}
+
 api.zws.im {
 	@preflight {
 		method OPTIONS

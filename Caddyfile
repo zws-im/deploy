@@ -8,6 +8,11 @@ api.zws.im {
 
 	respond @preflight 200
 
+	header {
+		+User-Agent {http.response.header.Server}
+		-Server
+	}
+
 	reverse_proxy 127.0.0.1:3000
 }
 

@@ -2,7 +2,15 @@
 	email jonah@jonah.pw
 }
 
+(cloudflare_dns) {
+	tls {
+		dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+	}
+}
+
 api.zws.im {
+	import cloudflare_dns
+
 	@preflight {
 		method OPTIONS
 	}
@@ -21,9 +29,13 @@ api.zws.im {
 }
 
 status.zws.im {
+	import cloudflare_dns
+
 	reverse_proxy 127.0.0.1:3001
 }
 
 metabase.zws.im {
+	import cloudflare_dns
+
 	reverse_proxy 127.0.0.1:3002
 }

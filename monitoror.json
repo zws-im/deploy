@@ -9,10 +9,11 @@
 			}
 		},
 		{
-			"type": "PING",
+			"type": "PORT",
 			"label": "Local API",
 			"params": {
-				"hostname": "web:3000"
+				"hostname": "web",
+				"port": 3000
 			}
 		},
 		{

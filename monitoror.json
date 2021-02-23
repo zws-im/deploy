@@ -10,6 +10,7 @@
 		},
 		{
 			"type": "PING",
+			"label": "Local API",
 			"params": {
 				"hostname": "localhost:3000"
 			}

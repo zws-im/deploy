@@ -1,9 +1,12 @@
-(cors) {
-        header Access-Control-Allow-Origin "{args.0}"
-}
-
 api.zws.im {
-        import cors *
+	@preflight {
+		method OPTIONS
+	}
 
-        reverse_proxy 127.0.0.1:3000
+	header @preflight Access-Control-Allow-Headers "*"
+	header Access-Control-Allow-Origin "*"
+
+	respond @preflight 200
+
+	reverse_proxy 127.0.0.1:3000
 }

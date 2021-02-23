@@ -9,11 +9,12 @@
 			}
 		},
 		{
-			"type": "PORT",
-			"label": "Local API",
+			"type": "HTTP-FORMATTED",
+			"label": "API Version",
 			"params": {
-				"hostname": "web",
-				"port": 3000
+				"url": "https://api.zws.im/stats?format=true",
+				"format": "JSON",
+				"key": "version"
 			}
 		},
 		{

@@ -1,0 +1,33 @@
+services:
+  web:
+    image: zwsim/zws
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    links:
+      - db
+    depends_on:
+      - migration
+    env_file: ./.env
+  migration:
+    image: zwsim/zws
+    links:
+      - db
+    env_file: ./.env
+    command: ['yarn', 'run', 'migrations']
+  db:
+    image: postgres:13
+    env_file: ./db.env
+    restart: unless-stopped
+    volumes:
+      - zws-postgres-storage:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+  watchtower:
+    image: containrrr/watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+volumes:
+  zws-postgres-storage:
+    external: true

@@ -1,5 +1,6 @@
 {
 	email jonah@jonah.pw
+	auto_https disable_redirects
 }
 
 (cloudflare_dns) {
@@ -8,7 +9,7 @@
 	}
 }
 
-api.zws.im:80 {
+api.zws.im {
 	import cloudflare_dns
 
 	@preflight {
@@ -28,13 +29,13 @@ api.zws.im:80 {
 	reverse_proxy 127.0.0.1:3000
 }
 
-status.zws.im:80 {
+status.zws.im {
 	import cloudflare_dns
 
 	reverse_proxy 127.0.0.1:3001
 }
 
-metabase.zws.im:80 {
+metabase.zws.im {
 	import cloudflare_dns
 
 	reverse_proxy 127.0.0.1:3002

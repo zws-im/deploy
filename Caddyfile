@@ -36,6 +36,8 @@ api.zws.im {
 		-Server
 	}
 
+	uri strip_suffix /
+
 	reverse_proxy 127.0.0.1:3000
 }
 

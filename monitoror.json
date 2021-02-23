@@ -25,11 +25,12 @@
 			}
 		},
 		{
-			"type": "HTTP-RAW",
+			"type": "HTTP-FORMATTED",
 			"label": "GitHub stars",
 			"params": {
-				"url": "https://github.com/zws-im/zws",
-				"regex": "(\\d+) users starred"
+				"url": "https://api.github.com/repos/zws-im/zws",
+				"format": "JSON",
+				"key": "stargazers_count"
 			}
 		},
 		{

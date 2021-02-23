@@ -1,0 +1,52 @@
+{
+	"version": "2.0",
+	"columns": 3,
+	"tiles": [
+		{
+			"type": "PING",
+			"params": {
+				"hostname": "api.zws.im"
+			}
+		},
+		{
+			"type": "PING",
+			"params": {
+				"hostname": "localhost:3000"
+			}
+		},
+		{
+			"type": "GITHUB-CHECKS",
+			"params": {
+				"owner": "zws-im",
+				"repository": "zws",
+				"ref": "master"
+			}
+		},
+		{
+			"type": "HTTP-RAW",
+			"label": "GitHub stars",
+			"params": {
+				"url": "https://github.com/zws-im/zws",
+				"regex": "(\\d+) users starred"
+			}
+		},
+		{
+			"type": "HTTP-FORMATTED",
+			"label": "URLs shortened",
+			"params": {
+				"url": "https://api.zws.im/stats",
+				"format": "JSON",
+				"key": "urls"
+			}
+		},
+		{
+			"type": "HTTP-FORMATTED",
+			"label": "URLs visited",
+			"params": {
+				"url": "https://api.zws.im/stats",
+				"format": "JSON",
+				"key": "visits"
+			}
+		}
+	]
+}

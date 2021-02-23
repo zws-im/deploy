@@ -23,6 +23,14 @@ services:
       - zws-postgres-storage:/var/lib/postgresql/data
     ports:
       - '5432:5432'
+  monitoror:
+    image: monitoror/monitoror:4
+    env_file: ./monitoror.env
+    restart: unless-stopped
+    volumes:
+      - ./monitoror.json:/bin/config.json:ro
+    ports:
+      - '3001:8080'
   watchtower:
     image: containrrr/watchtower
     restart: unless-stopped

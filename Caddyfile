@@ -19,3 +19,7 @@ api.zws.im {
 status.zws.im {
 	reverse_proxy 127.0.0.1:3001
 }
+
+metabase.zws.im {
+	reverse_proxy 127.0.0.1:3002
+}

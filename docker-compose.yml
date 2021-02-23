@@ -33,6 +33,21 @@ services:
       - '3001:8080'
     links:
       - web
+  metabase:
+    image: metabase/metabase
+    env_file: ./metabase.env
+    restart: unless-stopped
+    volumes:
+      - zws-metabase-storage:/metabase-data
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: metabase
+      MB_DB_PORT: 5432
+      MB_DB_HOST: db
+    links:
+      - db
+    ports:
+      - '3002:3000'
   watchtower:
     image: containrrr/watchtower
     restart: unless-stopped
@@ -40,4 +55,6 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
 volumes:
   zws-postgres-storage:
+    external: true
+  zws-metabase-storage:
     external: true

@@ -9,8 +9,18 @@
 	}
 }
 
+(cloudflare_origin_pull) {
+	tls {
+		client_auth {
+			mode require_and_verify
+			trusted_ca_cert_file ./cloudflare-origin-pull-ca.pem
+		}
+	}
+}
+
 api.zws.im {
 	import cloudflare_dns
+	import cloudflare_origin_pull
 
 	@preflight {
 		method OPTIONS
@@ -31,12 +41,14 @@ api.zws.im {
 
 status.zws.im {
 	import cloudflare_dns
+	import cloudflare_origin_pull
 
 	reverse_proxy 127.0.0.1:3001
 }
 
 metabase.zws.im {
 	import cloudflare_dns
+	import cloudflare_origin_pull
 
 	reverse_proxy 127.0.0.1:3002
 }

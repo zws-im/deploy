@@ -34,7 +34,7 @@
 			"type": "HTTP-FORMATTED",
 			"label": "URLs shortened",
 			"params": {
-				"url": "https://api.zws.im/stats",
+				"url": "https://api.zws.im/stats?format=true",
 				"format": "JSON",
 				"key": "urls"
 			}
@@ -43,7 +43,7 @@
 			"type": "HTTP-FORMATTED",
 			"label": "URLs visited",
 			"params": {
-				"url": "https://api.zws.im/stats",
+				"url": "https://api.zws.im/stats?format=true",
 				"format": "JSON",
 				"key": "visits"
 			}

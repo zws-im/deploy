@@ -76,5 +76,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 volumes:
+  caddy_data:
+  caddy_config:
   zws-postgres-storage:
     external: true

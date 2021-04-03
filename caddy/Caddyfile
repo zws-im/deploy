@@ -13,7 +13,7 @@
 	tls {
 		client_auth {
 			mode require_and_verify
-			trusted_ca_cert_file ./cloudflare-origin-pull-ca.pem
+			trusted_ca_cert_file /etc/caddy/cloudflare-origin-pull-ca.pem
 		}
 	}
 }
@@ -38,19 +38,19 @@ api.zws.im {
 
 	uri strip_suffix /
 
-	reverse_proxy 127.0.0.1:3000
+	reverse_proxy api:3000
 }
 
 status.zws.im {
 	import cloudflare_dns
 	import cloudflare_origin_pull
 
-	reverse_proxy 127.0.0.1:3001
+	reverse_proxy monitoror:8080
 }
 
 metabase.zws.im {
 	import cloudflare_dns
 	import cloudflare_origin_pull
 
-	reverse_proxy 127.0.0.1:3002
+	reverse_proxy metabase:3000
 }

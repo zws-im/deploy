@@ -1,9 +1,9 @@
 services:
-  web:
+  api:
     image: zwsim/zws
     restart: unless-stopped
-    ports:
-      - "3000:3000"
+    expose:
+      - "3000"
     links:
       - db
     depends_on:
@@ -37,10 +37,10 @@ services:
     restart: unless-stopped
     volumes:
       - ./monitoror.json:/bin/config.json:ro
-    ports:
-      - "3001:8080"
+    expose:
+      - "8080"
     links:
-      - web
+      - api
     environment:
       MO_CONFIG: ./config.json
   metabase:
@@ -54,8 +54,18 @@ services:
       MB_DB_HOST: db
     links:
       - db
+    expose:
+      - "3000"
+  caddy:
+    build: ./caddy
+    restart: unless-stopped
     ports:
-      - "3002:3000"
+      - "80:80"
+      - "443:443"
+    links:
+      - api
+      - monitoror
+      - metabase
   watchtower:
     image: containrrr/watchtower
     restart: unless-stopped

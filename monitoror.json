@@ -12,7 +12,7 @@
 			"type": "HTTP-FORMATTED",
 			"label": "API Version",
 			"params": {
-				"url": "http://web:3000/stats?format=true",
+				"url": "http://api:3000/stats?format=true",
 				"format": "JSON",
 				"key": "version"
 			}
@@ -37,7 +37,7 @@
 			"type": "HTTP-FORMATTED",
 			"label": "URLs shortened",
 			"params": {
-				"url": "http://web:3000/stats?format=true",
+				"url": "http://api:3000/stats?format=true",
 				"format": "JSON",
 				"key": "urls"
 			}
@@ -46,7 +46,7 @@
 			"type": "HTTP-FORMATTED",
 			"label": "URLs visited",
 			"params": {
-				"url": "http://web:3000/stats?format=true",
+				"url": "http://api:3000/stats?format=true",
 				"format": "JSON",
 				"key": "visits"
 			}

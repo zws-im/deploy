@@ -28,7 +28,7 @@ services:
     env_file: ./db.env
     restart: unless-stopped
     volumes:
-      - zws-postgres-storage:/var/lib/postgresql/data
+      - db:/var/lib/postgresql/data
     ports:
       - "5432:5432"
   monitoror:
@@ -78,5 +78,4 @@ services:
 volumes:
   caddy_data:
   caddy_config:
-  zws-postgres-storage:
-    external: true
+  db:

@@ -58,6 +58,7 @@ services:
       - "3000"
   caddy:
     build: ./caddy
+    env_file: ./caddy.env
     restart: unless-stopped
     ports:
       - "80:80"

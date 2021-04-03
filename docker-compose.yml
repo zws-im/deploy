@@ -67,6 +67,9 @@ services:
       - api
       - monitoror
       - metabase
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
   watchtower:
     image: containrrr/watchtower
     restart: unless-stopped

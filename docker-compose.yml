@@ -3,18 +3,26 @@ services:
     image: zwsim/zws
     restart: unless-stopped
     ports:
-      - '3000:3000'
+      - "3000:3000"
     links:
       - db
     depends_on:
       - migration
     env_file: ./.env
+    environment:
+      SHORT_LENGTH: "7"
+      SHORT_CHARS: '["\u200c","\u200d","\udb40\udc61","\udb40\udc62","\udb40\udc63","\udb40\udc64","\udb40\udc65","\udb40\udc66","\udb40\udc67","\udb40\udc68","\udb40\udc69","\udb40\udc6a","\udb40\udc6b","\udb40\udc6c","\udb40\udc6d","\udb40\udc6e","\udb40\udc6f","\udb40\udc70","\udb40\udc71","\udb40\udc72","\udb40\udc73","\udb40\udc74","\udb40\udc75","\udb40\udc76","\udb40\udc77","\udb40\udc78","\udb40\udc79","\udb40\udc7a","\udb40\udc7f"]'
+      SHORT_REWRITES: '{"\u180e": "\u200c", "\u200b": "\u200d"}'
+
+      PORT: "3000"
+      HOSTNAME: zws.im
+      SHORTENED_BASE_URL: https://zws.im
   migration:
     image: zwsim/zws
     links:
       - db
     env_file: ./.env
-    command: ['yarn', 'run', 'migrations']
+    command: ["yarn", "run", "migrations"]
   db:
     image: postgres:13
     env_file: ./db.env
@@ -22,7 +30,7 @@ services:
     volumes:
       - zws-postgres-storage:/var/lib/postgresql/data
     ports:
-      - '5432:5432'
+      - "5432:5432"
   monitoror:
     image: monitoror/monitoror:4
     env_file: ./monitoror.env
@@ -30,9 +38,11 @@ services:
     volumes:
       - ./monitoror.json:/bin/config.json:ro
     ports:
-      - '3001:8080'
+      - "3001:8080"
     links:
       - web
+    environment:
+      MO_CONFIG: ./config.json
   metabase:
     image: metabase/metabase
     env_file: ./metabase.env
@@ -45,7 +55,7 @@ services:
     links:
       - db
     ports:
-      - '3002:3000'
+      - "3002:3000"
   watchtower:
     image: containrrr/watchtower
     restart: unless-stopped

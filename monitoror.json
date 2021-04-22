@@ -22,7 +22,7 @@
 			"params": {
 				"owner": "zws-im",
 				"repository": "zws",
-				"ref": "master"
+				"ref": "main"
 			}
 		},
 		{

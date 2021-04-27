@@ -54,3 +54,7 @@ metabase.zws.im {
 
 	reverse_proxy metabase:3000
 }
+
+uptimerobot.zws.im {
+	redir https://stats.uptimerobot.com/MWv9pT54JQ temporary
+}

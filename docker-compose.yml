@@ -17,6 +17,8 @@ services:
       PORT: "3000"
       HOSTNAME: zws.im
       SHORTENED_BASE_URL: https://zws.im
+
+      BLOCKED_HOSTNAMES: '["webapps-customserve.cloudns.cl"]'
   migration:
     image: zwsim/zws
     links:

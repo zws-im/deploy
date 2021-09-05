@@ -19,6 +19,11 @@ services:
       SHORTENED_BASE_URL: https://zws.im
 
       BLOCKED_HOSTNAMES: '["webapps-customserve.cloudns.cl"]'
+
+      GOOGLE_PROJECT_ID: zero-width-shortener
+      GOOGLE_APPLICATION_CREDENTIALS: /etc/google-service-account.json
+    volumes:
+      - ./google-service-account.json:/etc/google-service-account.json:ro
   migration:
     image: zwsim/zws
     links:

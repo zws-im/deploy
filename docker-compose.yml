@@ -2,6 +2,7 @@ services:
   api:
     image: zwsim/zws
     restart: unless-stopped
+    init: true
     expose:
       - "3000"
     links:
@@ -26,6 +27,7 @@ services:
       - ./google-service-account.json:/etc/google-service-account.json:ro
   migration:
     image: zwsim/zws
+    init: true
     links:
       - db
     env_file: ./.env
@@ -40,6 +42,7 @@ services:
       - "5432:5432"
   backup:
     build: ./backup
+    init: true
     env_file:
       - ./backup.env
       - ./.env

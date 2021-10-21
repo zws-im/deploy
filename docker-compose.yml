@@ -19,7 +19,7 @@ services:
       HOSTNAME: zws.im
       SHORTENED_BASE_URL: https://zws.im
 
-      BLOCKED_HOSTNAMES: '["webapps-customserve.cloudns.cl", "aliyuncs.com"]'
+      BLOCKED_HOSTNAMES: '["api.zws.im", "zws.im", "webapps-customserve.cloudns.cl", "aliyuncs.com"]'
 
       GOOGLE_PROJECT_ID: zero-width-shortener
       GOOGLE_APPLICATION_CREDENTIALS: /etc/google-service-account.json

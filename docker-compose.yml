@@ -1,6 +1,6 @@
 services:
   api:
-    image: zwsim/zws:2.20.1
+    image: zwsim/zws:2.20.7
     restart: unless-stopped
     init: true
     expose:
@@ -26,7 +26,7 @@ services:
     volumes:
       - ./google-service-account.json:/etc/google-service-account.json:ro
   migration:
-    image: zwsim/zws:2.20.1
+    image: zwsim/zws:2.20.7
     init: true
     links:
       - db

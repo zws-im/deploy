@@ -33,7 +33,7 @@ services:
     env_file: ./.env
     command: ["yarn", "run", "migrations"]
   db:
-    image: postgres:13.8
+    image: postgres:15.0
     env_file: ./db.env
     restart: unless-stopped
     volumes:

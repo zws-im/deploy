@@ -19,7 +19,7 @@ services:
       HOSTNAME: zws.im
       SHORTENED_BASE_URL: https://zws.im
 
-      BLOCKED_HOSTNAMES: '["api.zws.im", "zws.im", "webapps-customserve.cloudns.cl", "aliyuncs.com", "6000c.xyz", "82083b.onelink.me", "m1937.com", "subcon.py6.pw", "sub.xeton.dev", "doisnet.com", "iplogger.org", "moneyonlineinvestment.com", "findyourlovemate.com", "golead7.co.uk", "myqcloud.com", "eprofitsmaster.com", "storageapi.fleek.co", "geetikamanucha.com", "com-o.cz", "axomiumdemo.com", "jourumbuffon.com", "kinaseseed.com"]'
+      BLOCKED_HOSTNAMES: '["api.zws.im", "zws.im", "webapps-customserve.cloudns.cl", "aliyuncs.com", "6000c.xyz", "82083b.onelink.me", "m1937.com", "subcon.py6.pw", "sub.xeton.dev", "doisnet.com", "iplogger.org", "moneyonlineinvestment.com", "findyourlovemate.com", "golead7.co.uk", "myqcloud.com", "eprofitsmaster.com", "storageapi.fleek.co", "geetikamanucha.com", "com-o.cz", "axomiumdemo.com", "jourumbuffon.com", "kinaseseed.com", "bre.is"]'
 
       GOOGLE_PROJECT_ID: zero-width-shortener
       GOOGLE_APPLICATION_CREDENTIALS: /etc/google-service-account.json

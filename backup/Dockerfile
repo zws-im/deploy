@@ -1,4 +1,4 @@
-FROM restic/restic:0.15.2
+FROM restic/restic:0.16.0
 
 RUN apk add --no-cache postgresql=13.4-r0 apk-cron=1.0-r3
 
